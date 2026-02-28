@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Flow — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F0E17;
+            --surface: #1A1929;
+            --border: #2A2940;
+            --accent: #7F5AF0;
+            --accent-soft: rgba(127, 90, 240, 0.12);
+            --text: #FFFFFE;
+            --text-secondary: #94A1B2;
+            --text-tertiary: #72757E;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 24px 48px;
+            background: linear-gradient(180deg, rgba(127,90,240,0.08) 0%, transparent 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--accent-soft);
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(127,90,240,0.25);
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .lang-btn {
+            padding: 8px 20px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover { border-color: var(--accent); color: var(--text); }
+        .lang-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            margin-bottom: 40px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 12px;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+
+        h2 .num {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        strong { color: var(--text); font-weight: 600; }
+
+        ul {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.6;
+        }
+
+        .highlight-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p { margin-bottom: 0; }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover { border-bottom-color: var(--accent); }
+
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+        }
+
+        .footer .app-name {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        @media (max-width: 480px) {
+            .hero { padding: 60px 20px 36px; }
+            .container { padding: 32px 20px 60px; }
+            h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-icon">📖</div>
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Study Flow — Il tuo compagno di studio</p>
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('it')">🇮🇹 Italiano</button>
+        <button class="lang-btn" onclick="switchLang('en')">🇬🇧 English</button>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ═══════════ ITALIANO ═══════════ -->
+    <div id="lang-it" class="lang-section active">
+
+        <p class="last-updated">Ultimo aggiornamento: 28 febbraio 2026</p>
+
+        <h2><span class="num">1.</span> Introduzione</h2>
+        <p>Study Flow è un'applicazione iOS sviluppata da <strong>Antonio Galetta</strong> ("noi", "nostro"). La tua privacy è importante. Questa informativa spiega come l'app gestisce i tuoi dati.</p>
+
+        <div class="highlight-box">
+            <p><strong>In sintesi:</strong> Study Flow non raccoglie, non vende e non condivide i tuoi dati personali con nessuno. Tutti i tuoi dati restano sul tuo dispositivo e nel tuo account iCloud privato.</p>
+        </div>
+
+        <h2><span class="num">2.</span> Dati raccolti dall'app</h2>
+        <p>Study Flow salva localmente sul tuo dispositivo i seguenti dati relativi al tuo percorso di studio:</p>
+        <ul>
+            <li>Materie, libri e progresso di lettura</li>
+            <li>Esami programmati e risultati (voti)</li>
+            <li>Sessioni di studio completate</li>
+            <li>Card di ripasso spaziato</li>
+            <li>Lezioni settimanali nel calendario</li>
+            <li>Profili timer personalizzati</li>
+            <li>Preferenze dell'app (tema, impostazioni audio)</li>
+        </ul>
+        <p>Questi dati sono creati esclusivamente da te e servono al funzionamento dell'app.</p>
+
+        <h2><span class="num">3.</span> Sincronizzazione iCloud</h2>
+        <p>Se hai iCloud attivo sul tuo dispositivo, Study Flow utilizza <strong>Apple CloudKit</strong> per sincronizzare i tuoi dati di studio tra i tuoi dispositivi Apple. Questo significa che:</p>
+        <ul>
+            <li>I dati vengono archiviati nel <strong>tuo account iCloud privato</strong></li>
+            <li>Solo tu puoi accedere ai tuoi dati</li>
+            <li>Noi non abbiamo accesso ai dati nel tuo iCloud</li>
+            <li>La sincronizzazione è gestita interamente da Apple</li>
+        </ul>
+        <p>Puoi disattivare la sincronizzazione iCloud dalle Impostazioni di sistema del tuo iPhone.</p>
+
+        <h2><span class="num">4.</span> Apple Music</h2>
+        <p>Study Flow può accedere alla tua libreria Apple Music, <strong>solo se concedi il permesso</strong>, per riprodurre un brano personalizzato durante le pause di studio. L'app non raccoglie né trasmette informazioni sulla tua libreria musicale.</p>
+
+        <h2><span class="num">5.</span> Notifiche push</h2>
+        <p>L'app può inviare notifiche locali per ricordarti sessioni di ripasso, esami in programma e altre informazioni utili. Queste notifiche sono generate interamente sul tuo dispositivo — non utilizziamo server esterni per inviarle.</p>
+
+        <h2><span class="num">6.</span> Acquisti in-app</h2>
+        <p>Study Flow offre un acquisto in-app opzionale ("Study Flow Pro") gestito interamente da Apple tramite l'App Store. Non raccogliamo informazioni di pagamento: tutte le transazioni sono elaborate da Apple. Per la politica sui pagamenti, consulta la <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank" rel="noopener">privacy policy di Apple</a>.</p>
+
+        <h2><span class="num">7.</span> Dati condivisi con terze parti</h2>
+        <div class="highlight-box">
+            <p><strong>Nessuno.</strong> Study Flow non condivide, non vende e non trasferisce i tuoi dati a terze parti. Non utilizziamo servizi di analytics, pubblicità o tracciamento di alcun tipo.</p>
+        </div>
+
+        <h2><span class="num">8.</span> Sicurezza dei dati</h2>
+        <p>I dati dell'app sono protetti dalle funzionalità di sicurezza integrate nel tuo dispositivo Apple (crittografia del dispositivo, Face ID/Touch ID, codice di sblocco). I dati sincronizzati tramite iCloud sono protetti dalla crittografia di Apple.</p>
+
+        <h2><span class="num">9.</span> Diritti dell'utente</h2>
+        <p>Hai il pieno controllo dei tuoi dati:</p>
+        <ul>
+            <li><strong>Eliminazione:</strong> puoi cancellare tutti i dati dell'app in qualsiasi momento dalla sezione "Zona Pericolosa" nelle Impostazioni dell'app, oppure disinstallando l'app</li>
+            <li><strong>Portabilità:</strong> puoi generare un report PDF del tuo percorso accademico direttamente dall'app</li>
+            <li><strong>Accesso:</strong> tutti i tuoi dati sono visibili e accessibili all'interno dell'app</li>
+        </ul>
+
+        <h2><span class="num">10.</span> Minori</h2>
+        <p>Study Flow è destinata a studenti universitari. Non raccogliamo consapevolmente dati personali da minori di 13 anni. L'app non richiede la creazione di un account e non raccoglie informazioni identificative.</p>
+
+        <h2><span class="num">11.</span> Modifiche a questa policy</h2>
+        <p>Potremmo aggiornare questa informativa in futuro. Eventuali modifiche saranno pubblicate su questa pagina con la data di aggiornamento.</p>
+
+        <h2><span class="num">12.</span> Contatti</h2>
+        <p>Per domande o richieste relative alla privacy, puoi contattarci a:</p>
+        <p><strong>Antonio Galetta</strong><br>
+        Email: <a href="mailto:studyflowstudent@gmail.com">studyflowstudent@gmail.com</a></p>
+    </div>
+
+    <!-- ═══════════ ENGLISH ═══════════ -->
+    <div id="lang-en" class="lang-section">
+
+        <p class="last-updated">Last updated: February 28, 2026</p>
+
+        <h2><span class="num">1.</span> Introduction</h2>
+        <p>Study Flow is an iOS application developed by <strong>Antonio Galetta</strong> ("we", "our"). Your privacy matters to us. This policy explains how the app handles your data.</p>
+
+        <div class="highlight-box">
+            <p><strong>In short:</strong> Study Flow does not collect, sell, or share your personal data with anyone. All your data stays on your device and in your private iCloud account.</p>
+        </div>
+
+        <h2><span class="num">2.</span> Data stored by the app</h2>
+        <p>Study Flow stores the following study-related data locally on your device:</p>
+        <ul>
+            <li>Subjects, books, and reading progress</li>
+            <li>Scheduled exams and results (grades)</li>
+            <li>Completed study sessions</li>
+            <li>Spaced repetition review cards</li>
+            <li>Weekly lecture schedule</li>
+            <li>Custom timer profiles</li>
+            <li>App preferences (theme, audio settings)</li>
+        </ul>
+        <p>This data is created exclusively by you and is used solely for app functionality.</p>
+
+        <h2><span class="num">3.</span> iCloud synchronization</h2>
+        <p>If iCloud is enabled on your device, Study Flow uses <strong>Apple CloudKit</strong> to sync your study data across your Apple devices. This means:</p>
+        <ul>
+            <li>Data is stored in <strong>your private iCloud account</strong></li>
+            <li>Only you can access your data</li>
+            <li>We have no access to your iCloud data</li>
+            <li>Synchronization is managed entirely by Apple</li>
+        </ul>
+        <p>You can disable iCloud sync from your iPhone's System Settings.</p>
+
+        <h2><span class="num">4.</span> Apple Music</h2>
+        <p>Study Flow may access your Apple Music library, <strong>only with your permission</strong>, to play a custom song during study breaks. The app does not collect or transmit any information about your music library.</p>
+
+        <h2><span class="num">5.</span> Push notifications</h2>
+        <p>The app may send local notifications to remind you about review sessions, upcoming exams, and other helpful information. These notifications are generated entirely on your device — we do not use external servers to send them.</p>
+
+        <h2><span class="num">6.</span> In-app purchases</h2>
+        <p>Study Flow offers an optional in-app purchase ("Study Flow Pro") managed entirely by Apple through the App Store. We do not collect any payment information: all transactions are processed by Apple. For payment policies, refer to <a href="https://www.apple.com/legal/internet-services/itunes/" target="_blank" rel="noopener">Apple's privacy policy</a>.</p>
+
+        <h2><span class="num">7.</span> Data shared with third parties</h2>
+        <div class="highlight-box">
+            <p><strong>None.</strong> Study Flow does not share, sell, or transfer your data to any third party. We do not use any analytics, advertising, or tracking services of any kind.</p>
+        </div>
+
+        <h2><span class="num">8.</span> Data security</h2>
+        <p>Your app data is protected by your Apple device's built-in security features (device encryption, Face ID/Touch ID, passcode). Data synced through iCloud is protected by Apple's encryption.</p>
+
+        <h2><span class="num">9.</span> Your rights</h2>
+        <p>You have full control over your data:</p>
+        <ul>
+            <li><strong>Deletion:</strong> you can delete all app data at any time from the "Danger Zone" in the app's Settings, or by uninstalling the app</li>
+            <li><strong>Portability:</strong> you can generate a PDF report of your academic progress directly from the app</li>
+            <li><strong>Access:</strong> all your data is visible and accessible within the app</li>
+        </ul>
+
+        <h2><span class="num">10.</span> Children</h2>
+        <p>Study Flow is intended for university students. We do not knowingly collect personal data from children under 13. The app does not require account creation and does not collect identifying information.</p>
+
+        <h2><span class="num">11.</span> Changes to this policy</h2>
+        <p>We may update this policy in the future. Any changes will be posted on this page with the updated date.</p>
+
+        <h2><span class="num">12.</span> Contact</h2>
+        <p>For privacy-related questions or requests, you can reach us at:</p>
+        <p><strong>Antonio Galetta</strong><br>
+        Email: <a href="mailto:studyflowstudent@gmail.com">studyflowstudent@gmail.com</a></p>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p><span class="app-name">Study Flow</span> · Made with ❤️ for students</p>
+    <p style="margin-top: 4px;">© 2026 Antonio Galetta</p>
+</div>
+
+<script>
+    function switchLang(lang) {
+        document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('lang-' + lang).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
+
+</body>
+</html>

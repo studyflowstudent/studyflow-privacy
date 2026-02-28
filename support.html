@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Flow — Supporto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F0E17;
+            --surface: #1A1929;
+            --border: #2A2940;
+            --accent: #7F5AF0;
+            --accent-soft: rgba(127, 90, 240, 0.12);
+            --text: #FFFFFE;
+            --text-secondary: #94A1B2;
+            --text-tertiary: #72757E;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 24px 48px;
+            background: linear-gradient(180deg, rgba(127,90,240,0.08) 0%, transparent 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-icon {
+            width: 72px; height: 72px;
+            background: var(--accent-soft);
+            border-radius: 18px;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 36px; margin-bottom: 20px;
+            border: 1px solid rgba(127,90,240,0.25);
+        }
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 400; margin-bottom: 8px; letter-spacing: -0.02em;
+        }
+        .hero .subtitle { color: var(--text-secondary); font-size: 1rem; }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem; font-weight: 400;
+            margin-top: 36px; margin-bottom: 12px; color: var(--text);
+        }
+        p { color: var(--text-secondary); margin-bottom: 16px; font-size: 0.95rem; }
+        strong { color: var(--text); font-weight: 600; }
+        a {
+            color: var(--accent); text-decoration: none;
+            border-bottom: 1px solid transparent; transition: border-color 0.2s;
+        }
+        a:hover { border-bottom-color: var(--accent); }
+        .card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 16px 0;
+        }
+        .card h3 { font-size: 1rem; margin-bottom: 8px; color: var(--text); }
+        .card p { margin-bottom: 0; }
+        .faq-item { margin-bottom: 24px; }
+        .faq-item summary {
+            color: var(--text); font-weight: 500; cursor: pointer;
+            padding: 12px 0; font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
+            list-style: none;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::before {
+            content: '＋'; margin-right: 12px; color: var(--accent);
+            font-weight: 700;
+        }
+        .faq-item[open] summary::before { content: '－'; }
+        .faq-item .answer { padding: 12px 0 0 28px; }
+        .contact-box {
+            text-align: center; background: var(--accent-soft);
+            border: 1px solid rgba(127,90,240,0.25);
+            border-radius: 16px; padding: 32px; margin-top: 40px;
+        }
+        .contact-box .emoji { font-size: 2rem; margin-bottom: 12px; }
+        .contact-box a {
+            display: inline-block; margin-top: 12px;
+            background: var(--accent); color: #fff; padding: 12px 28px;
+            border-radius: 24px; font-weight: 600; border: none;
+        }
+        .contact-box a:hover { opacity: 0.9; }
+        .footer {
+            text-align: center; padding: 32px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-tertiary); font-size: 0.85rem;
+        }
+        .footer .app-name { color: var(--accent); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-icon">💬</div>
+    <h1>Supporto</h1>
+    <p class="subtitle">Study Flow — Aiuto e domande frequenti</p>
+</div>
+
+<div class="container">
+
+    <p>Benvenuto nella pagina di supporto di Study Flow. Qui trovi le risposte alle domande più frequenti e i modi per contattarci.</p>
+
+    <h2>Domande Frequenti</h2>
+
+    <details class="faq-item">
+        <summary>Come funziona la sincronizzazione tra dispositivi?</summary>
+        <div class="answer">
+            <p>Study Flow utilizza iCloud (CloudKit) per sincronizzare automaticamente i tuoi dati tra tutti i dispositivi Apple collegati allo stesso account iCloud. Assicurati che iCloud sia attivo nelle Impostazioni di sistema.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>Ho perso i miei dati dopo aver reinstallato l'app. Come li recupero?</summary>
+        <div class="answer">
+            <p>Se avevi iCloud attivo, i tuoi dati dovrebbero sincronizzarsi automaticamente dopo la reinstallazione. Attendi qualche minuto e assicurati di essere connesso allo stesso account iCloud. Se i dati non appaiono, apri e chiudi l'app un paio di volte per forzare la sincronizzazione.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>Come funziona il ripasso spaziato?</summary>
+        <div class="answer">
+            <p>Study Flow utilizza l'algoritmo SM-2 per calcolare il momento ideale in cui ripassare ogni argomento. Dopo ogni sessione di ripasso, valuti la tua padronanza e l'app ricalcola l'intervallo successivo. Più ricordi bene un argomento, più tempo passerà prima del prossimo ripasso.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>Cos'è Study Flow Pro?</summary>
+        <div class="answer">
+            <p>Study Flow Pro è un acquisto una tantum che sblocca tutte le funzionalità premium: materie illimitate, card di ripasso illimitate, tutti i temi, profili timer personalizzati, Exam Day Fortune, Archivio Anno Accademico e molto altro. Paghi una sola volta e hai accesso per sempre.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>Come posso ripristinare il mio acquisto su un nuovo dispositivo?</summary>
+        <div class="answer">
+            <p>L'acquisto è legato al tuo account Apple. Su un nuovo dispositivo, apri Study Flow e l'acquisto verrà ripristinato automaticamente. Se non dovesse funzionare, vai nelle Impostazioni dell'app e usa il pulsante "Ripristina Acquisti".</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>Come posso cancellare tutti i miei dati?</summary>
+        <div class="answer">
+            <p>Vai in Impostazioni → scorri in fondo alla "Zona Pericolosa" → "Elimina tutti i dati". Questo cancellerà tutti i dati locali e dal tuo iCloud. L'operazione è irreversibile.</p>
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>L'app raccoglie i miei dati personali?</summary>
+        <div class="answer">
+            <p>No. Study Flow non raccoglie, non vende e non condivide nessun dato personale con terze parti. Tutti i tuoi dati restano sul tuo dispositivo e nel tuo iCloud privato. Leggi la nostra <a href="./privacy">Privacy Policy</a> per tutti i dettagli.</p>
+        </div>
+    </details>
+
+    <div class="contact-box">
+        <div class="emoji">✉️</div>
+        <h3>Hai bisogno di aiuto?</h3>
+        <p>Non hai trovato la risposta? Scrivici, rispondiamo entro 48 ore.</p>
+        <a href="mailto:studyflowstudent@gmail.com">Contattaci</a>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p><span class="app-name">Study Flow</span> · Made with ❤️ for students</p>
+    <p style="margin-top: 4px;">© 2026 Antonio Galetta · <a href="./privacy">Privacy Policy</a></p>
+</div>
+
+</body>
+</html>
